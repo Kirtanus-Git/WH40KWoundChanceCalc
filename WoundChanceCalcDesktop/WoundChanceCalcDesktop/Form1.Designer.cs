@@ -48,10 +48,14 @@
             this.Shred_checkBox = new System.Windows.Forms.CheckBox();
             this.Calc_button = new System.Windows.Forms.Button();
             this.Result_textBox = new System.Windows.Forms.TextBox();
-            this.NumberofHits_textBox = new System.Windows.Forms.TextBox();
-            this.Hatred_checkBox = new System.Windows.Forms.CheckBox();
+            this.NumberofAttacks_textBox = new System.Windows.Forms.TextBox();
+            this.RerollFailedtoHit_checkBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MasterCrafted_checkBox = new System.Windows.Forms.CheckBox();
+            this.CC_radioButton = new System.Windows.Forms.RadioButton();
+            this.RW_radioButton = new System.Windows.Forms.RadioButton();
+            this.BS_comboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AttackerWS
@@ -59,7 +63,7 @@
             this.AttackerWS.AutoSize = true;
             this.AttackerWS.Cursor = System.Windows.Forms.Cursors.Default;
             this.AttackerWS.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttackerWS.Location = new System.Drawing.Point(18, 23);
+            this.AttackerWS.Location = new System.Drawing.Point(12, 44);
             this.AttackerWS.Name = "AttackerWS";
             this.AttackerWS.Size = new System.Drawing.Size(84, 15);
             this.AttackerWS.TabIndex = 0;
@@ -70,7 +74,7 @@
             this.TargetWS.AutoSize = true;
             this.TargetWS.Cursor = System.Windows.Forms.Cursors.Default;
             this.TargetWS.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TargetWS.Location = new System.Drawing.Point(196, 23);
+            this.TargetWS.Location = new System.Drawing.Point(187, 44);
             this.TargetWS.Name = "TargetWS";
             this.TargetWS.Size = new System.Drawing.Size(70, 15);
             this.TargetWS.TabIndex = 1;
@@ -81,7 +85,7 @@
             this.Strength.AutoSize = true;
             this.Strength.Cursor = System.Windows.Forms.Cursors.Default;
             this.Strength.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Strength.Location = new System.Drawing.Point(18, 45);
+            this.Strength.Location = new System.Drawing.Point(12, 66);
             this.Strength.Name = "Strength";
             this.Strength.Size = new System.Drawing.Size(112, 15);
             this.Strength.TabIndex = 4;
@@ -90,7 +94,7 @@
             // Preferedenemy_checkBox
             // 
             this.Preferedenemy_checkBox.AutoSize = true;
-            this.Preferedenemy_checkBox.Location = new System.Drawing.Point(343, 43);
+            this.Preferedenemy_checkBox.Location = new System.Drawing.Point(337, 64);
             this.Preferedenemy_checkBox.Name = "Preferedenemy_checkBox";
             this.Preferedenemy_checkBox.Size = new System.Drawing.Size(100, 17);
             this.Preferedenemy_checkBox.TabIndex = 6;
@@ -111,11 +115,12 @@
             "8",
             "9",
             "10"});
-            this.A_WS_comboBox.Location = new System.Drawing.Point(136, 21);
+            this.A_WS_comboBox.Location = new System.Drawing.Point(130, 42);
             this.A_WS_comboBox.MaxDropDownItems = 11;
             this.A_WS_comboBox.Name = "A_WS_comboBox";
             this.A_WS_comboBox.Size = new System.Drawing.Size(40, 21);
             this.A_WS_comboBox.TabIndex = 7;
+            this.A_WS_comboBox.Text = "4";
             // 
             // T_WS_comboBox
             // 
@@ -132,18 +137,19 @@
             "8",
             "9",
             "10"});
-            this.T_WS_comboBox.Location = new System.Drawing.Point(272, 21);
+            this.T_WS_comboBox.Location = new System.Drawing.Point(266, 42);
             this.T_WS_comboBox.MaxDropDownItems = 11;
             this.T_WS_comboBox.Name = "T_WS_comboBox";
             this.T_WS_comboBox.Size = new System.Drawing.Size(40, 21);
             this.T_WS_comboBox.TabIndex = 8;
+            this.T_WS_comboBox.Text = "4";
             // 
             // Toughness
             // 
             this.Toughness.AutoSize = true;
             this.Toughness.Cursor = System.Windows.Forms.Cursors.Default;
             this.Toughness.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Toughness.Location = new System.Drawing.Point(196, 45);
+            this.Toughness.Location = new System.Drawing.Point(187, 66);
             this.Toughness.Name = "Toughness";
             this.Toughness.Size = new System.Drawing.Size(70, 15);
             this.Toughness.TabIndex = 9;
@@ -163,11 +169,12 @@
             "8",
             "9",
             "10"});
-            this.Strength_comboBox.Location = new System.Drawing.Point(136, 43);
+            this.Strength_comboBox.Location = new System.Drawing.Point(130, 64);
             this.Strength_comboBox.MaxDropDownItems = 11;
             this.Strength_comboBox.Name = "Strength_comboBox";
             this.Strength_comboBox.Size = new System.Drawing.Size(40, 21);
             this.Strength_comboBox.TabIndex = 10;
+            this.Strength_comboBox.Text = "4";
             // 
             // Toughness_comboBox
             // 
@@ -183,18 +190,19 @@
             "8",
             "9",
             "10"});
-            this.Toughness_comboBox.Location = new System.Drawing.Point(272, 43);
+            this.Toughness_comboBox.Location = new System.Drawing.Point(266, 64);
             this.Toughness_comboBox.MaxDropDownItems = 11;
             this.Toughness_comboBox.Name = "Toughness_comboBox";
             this.Toughness_comboBox.Size = new System.Drawing.Size(40, 21);
             this.Toughness_comboBox.TabIndex = 11;
+            this.Toughness_comboBox.Text = "4";
             // 
             // ArmourPercing
             // 
             this.ArmourPercing.AutoSize = true;
             this.ArmourPercing.Cursor = System.Windows.Forms.Cursors.Default;
             this.ArmourPercing.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArmourPercing.Location = new System.Drawing.Point(18, 72);
+            this.ArmourPercing.Location = new System.Drawing.Point(12, 93);
             this.ArmourPercing.Name = "ArmourPercing";
             this.ArmourPercing.Size = new System.Drawing.Size(21, 15);
             this.ArmourPercing.TabIndex = 12;
@@ -204,41 +212,43 @@
             // 
             this.AP_comboBox.FormattingEnabled = true;
             this.AP_comboBox.Items.AddRange(new object[] {
-            "",
+            "-",
             "6",
             "5",
             "4",
             "3",
             "2",
             "1"});
-            this.AP_comboBox.Location = new System.Drawing.Point(136, 66);
+            this.AP_comboBox.Location = new System.Drawing.Point(130, 87);
             this.AP_comboBox.MaxDropDownItems = 11;
             this.AP_comboBox.Name = "AP_comboBox";
             this.AP_comboBox.Size = new System.Drawing.Size(40, 21);
             this.AP_comboBox.TabIndex = 13;
+            this.AP_comboBox.Text = "-";
             // 
             // ArmourSave_comboBox
             // 
             this.ArmourSave_comboBox.FormattingEnabled = true;
             this.ArmourSave_comboBox.Items.AddRange(new object[] {
-            "",
+            "-",
             "6+",
             "5+",
             "4+",
             "3+",
             "2+"});
-            this.ArmourSave_comboBox.Location = new System.Drawing.Point(272, 66);
+            this.ArmourSave_comboBox.Location = new System.Drawing.Point(266, 87);
             this.ArmourSave_comboBox.MaxDropDownItems = 11;
             this.ArmourSave_comboBox.Name = "ArmourSave_comboBox";
             this.ArmourSave_comboBox.Size = new System.Drawing.Size(40, 21);
             this.ArmourSave_comboBox.TabIndex = 15;
+            this.ArmourSave_comboBox.Text = "-";
             // 
             // ArmourSave
             // 
             this.ArmourSave.AutoSize = true;
             this.ArmourSave.Cursor = System.Windows.Forms.Cursors.Default;
             this.ArmourSave.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArmourSave.Location = new System.Drawing.Point(196, 68);
+            this.ArmourSave.Location = new System.Drawing.Point(187, 89);
             this.ArmourSave.Name = "ArmourSave";
             this.ArmourSave.Size = new System.Drawing.Size(77, 15);
             this.ArmourSave.TabIndex = 14;
@@ -248,24 +258,25 @@
             // 
             this.InvSave_comboBox.FormattingEnabled = true;
             this.InvSave_comboBox.Items.AddRange(new object[] {
-            "",
+            "-",
             "6+",
             "5+",
             "4+",
             "3+",
             "2+"});
-            this.InvSave_comboBox.Location = new System.Drawing.Point(272, 88);
+            this.InvSave_comboBox.Location = new System.Drawing.Point(266, 109);
             this.InvSave_comboBox.MaxDropDownItems = 11;
             this.InvSave_comboBox.Name = "InvSave_comboBox";
             this.InvSave_comboBox.Size = new System.Drawing.Size(40, 21);
             this.InvSave_comboBox.TabIndex = 17;
+            this.InvSave_comboBox.Text = "-";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(196, 90);
+            this.label1.Location = new System.Drawing.Point(187, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 15);
             this.label1.TabIndex = 16;
@@ -275,22 +286,23 @@
             // 
             this.FNP_comboBox.FormattingEnabled = true;
             this.FNP_comboBox.Items.AddRange(new object[] {
-            "",
+            "-",
             "6+",
             "5+",
             "4+"});
-            this.FNP_comboBox.Location = new System.Drawing.Point(272, 113);
+            this.FNP_comboBox.Location = new System.Drawing.Point(266, 134);
             this.FNP_comboBox.MaxDropDownItems = 11;
             this.FNP_comboBox.Name = "FNP_comboBox";
             this.FNP_comboBox.Size = new System.Drawing.Size(40, 21);
             this.FNP_comboBox.TabIndex = 19;
+            this.FNP_comboBox.Text = "-";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(196, 115);
+            this.label2.Location = new System.Drawing.Point(187, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 15);
             this.label2.TabIndex = 18;
@@ -299,7 +311,7 @@
             // Shred_checkBox
             // 
             this.Shred_checkBox.AutoSize = true;
-            this.Shred_checkBox.Location = new System.Drawing.Point(343, 88);
+            this.Shred_checkBox.Location = new System.Drawing.Point(337, 109);
             this.Shred_checkBox.Name = "Shred_checkBox";
             this.Shred_checkBox.Size = new System.Drawing.Size(54, 17);
             this.Shred_checkBox.TabIndex = 20;
@@ -326,30 +338,30 @@
             this.Result_textBox.Size = new System.Drawing.Size(257, 109);
             this.Result_textBox.TabIndex = 22;
             // 
-            // NumberofHits_textBox
+            // NumberofAttacks_textBox
             // 
-            this.NumberofHits_textBox.Location = new System.Drawing.Point(136, 92);
-            this.NumberofHits_textBox.Name = "NumberofHits_textBox";
-            this.NumberofHits_textBox.Size = new System.Drawing.Size(40, 20);
-            this.NumberofHits_textBox.TabIndex = 23;
-            this.NumberofHits_textBox.Text = "1";
+            this.NumberofAttacks_textBox.Location = new System.Drawing.Point(130, 113);
+            this.NumberofAttacks_textBox.Name = "NumberofAttacks_textBox";
+            this.NumberofAttacks_textBox.Size = new System.Drawing.Size(40, 20);
+            this.NumberofAttacks_textBox.TabIndex = 23;
+            this.NumberofAttacks_textBox.Text = "1";
             // 
-            // Hatred_checkBox
+            // RerollFailedtoHit_checkBox
             // 
-            this.Hatred_checkBox.AutoSize = true;
-            this.Hatred_checkBox.Location = new System.Drawing.Point(343, 66);
-            this.Hatred_checkBox.Name = "Hatred_checkBox";
-            this.Hatred_checkBox.Size = new System.Drawing.Size(58, 17);
-            this.Hatred_checkBox.TabIndex = 24;
-            this.Hatred_checkBox.Text = "Hatred";
-            this.Hatred_checkBox.UseVisualStyleBackColor = true;
+            this.RerollFailedtoHit_checkBox.AutoSize = true;
+            this.RerollFailedtoHit_checkBox.Location = new System.Drawing.Point(337, 87);
+            this.RerollFailedtoHit_checkBox.Name = "RerollFailedtoHit_checkBox";
+            this.RerollFailedtoHit_checkBox.Size = new System.Drawing.Size(117, 17);
+            this.RerollFailedtoHit_checkBox.TabIndex = 24;
+            this.RerollFailedtoHit_checkBox.Text = "Hatred/Twin-linked";
+            this.RerollFailedtoHit_checkBox.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
             this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 94);
+            this.label3.Location = new System.Drawing.Point(12, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 15);
             this.label3.TabIndex = 25;
@@ -358,26 +370,86 @@
             // MasterCrafted_checkBox
             // 
             this.MasterCrafted_checkBox.AutoSize = true;
-            this.MasterCrafted_checkBox.Location = new System.Drawing.Point(343, 23);
+            this.MasterCrafted_checkBox.Location = new System.Drawing.Point(337, 44);
             this.MasterCrafted_checkBox.Name = "MasterCrafted_checkBox";
             this.MasterCrafted_checkBox.Size = new System.Drawing.Size(95, 17);
             this.MasterCrafted_checkBox.TabIndex = 5;
             this.MasterCrafted_checkBox.Text = "Master-Crafted";
             this.MasterCrafted_checkBox.UseVisualStyleBackColor = true;
             // 
+            // CC_radioButton
+            // 
+            this.CC_radioButton.AutoSize = true;
+            this.CC_radioButton.Checked = true;
+            this.CC_radioButton.Location = new System.Drawing.Point(119, 12);
+            this.CC_radioButton.Name = "CC_radioButton";
+            this.CC_radioButton.Size = new System.Drawing.Size(90, 17);
+            this.CC_radioButton.TabIndex = 26;
+            this.CC_radioButton.TabStop = true;
+            this.CC_radioButton.Text = "Close Combat";
+            this.CC_radioButton.UseVisualStyleBackColor = true;
+            this.CC_radioButton.Click += new System.EventHandler(this.CC_click);
+            // 
+            // RW_radioButton
+            // 
+            this.RW_radioButton.AutoSize = true;
+            this.RW_radioButton.Location = new System.Drawing.Point(216, 12);
+            this.RW_radioButton.Name = "RW_radioButton";
+            this.RW_radioButton.Size = new System.Drawing.Size(101, 17);
+            this.RW_radioButton.TabIndex = 27;
+            this.RW_radioButton.Text = "Range Weapon";
+            this.RW_radioButton.UseVisualStyleBackColor = true;
+            this.RW_radioButton.Click += new System.EventHandler(this.RW_Click);
+            // 
+            // BS_comboBox
+            // 
+            this.BS_comboBox.FormattingEnabled = true;
+            this.BS_comboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.BS_comboBox.Location = new System.Drawing.Point(130, 138);
+            this.BS_comboBox.MaxDropDownItems = 11;
+            this.BS_comboBox.Name = "BS_comboBox";
+            this.BS_comboBox.Size = new System.Drawing.Size(40, 21);
+            this.BS_comboBox.TabIndex = 30;
+            this.BS_comboBox.Text = "4";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 15);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Attacker BS";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 362);
+            this.Controls.Add(this.BS_comboBox);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.RW_radioButton);
+            this.Controls.Add(this.CC_radioButton);
             this.Controls.Add(this.AttackerWS);
             this.Controls.Add(this.TargetWS);
             this.Controls.Add(this.MasterCrafted_checkBox);
             this.Controls.Add(this.A_WS_comboBox);
             this.Controls.Add(this.T_WS_comboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Hatred_checkBox);
-            this.Controls.Add(this.NumberofHits_textBox);
+            this.Controls.Add(this.RerollFailedtoHit_checkBox);
+            this.Controls.Add(this.NumberofAttacks_textBox);
             this.Controls.Add(this.Result_textBox);
             this.Controls.Add(this.Calc_button);
             this.Controls.Add(this.Shred_checkBox);
@@ -423,10 +495,14 @@
         private System.Windows.Forms.CheckBox Shred_checkBox;
         private System.Windows.Forms.Button Calc_button;
         private System.Windows.Forms.TextBox Result_textBox;
-        private System.Windows.Forms.TextBox NumberofHits_textBox;
-        private System.Windows.Forms.CheckBox Hatred_checkBox;
+        private System.Windows.Forms.TextBox NumberofAttacks_textBox;
+        private System.Windows.Forms.CheckBox RerollFailedtoHit_checkBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox MasterCrafted_checkBox;
+        private System.Windows.Forms.RadioButton CC_radioButton;
+        private System.Windows.Forms.RadioButton RW_radioButton;
+        private System.Windows.Forms.ComboBox BS_comboBox;
+        private System.Windows.Forms.Label label4;
     }
 }
 
