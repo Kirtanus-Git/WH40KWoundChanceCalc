@@ -52,8 +52,6 @@
             this.Hatred_checkBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.MasterCrafted_checkBox = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AttackerWS
@@ -61,7 +59,7 @@
             this.AttackerWS.AutoSize = true;
             this.AttackerWS.Cursor = System.Windows.Forms.Cursors.Default;
             this.AttackerWS.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttackerWS.Location = new System.Drawing.Point(3, 9);
+            this.AttackerWS.Location = new System.Drawing.Point(18, 23);
             this.AttackerWS.Name = "AttackerWS";
             this.AttackerWS.Size = new System.Drawing.Size(84, 15);
             this.AttackerWS.TabIndex = 0;
@@ -72,7 +70,7 @@
             this.TargetWS.AutoSize = true;
             this.TargetWS.Cursor = System.Windows.Forms.Cursors.Default;
             this.TargetWS.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TargetWS.Location = new System.Drawing.Point(182, 9);
+            this.TargetWS.Location = new System.Drawing.Point(196, 23);
             this.TargetWS.Name = "TargetWS";
             this.TargetWS.Size = new System.Drawing.Size(70, 15);
             this.TargetWS.TabIndex = 1;
@@ -113,7 +111,7 @@
             "8",
             "9",
             "10"});
-            this.A_WS_comboBox.Location = new System.Drawing.Point(122, 7);
+            this.A_WS_comboBox.Location = new System.Drawing.Point(136, 21);
             this.A_WS_comboBox.MaxDropDownItems = 11;
             this.A_WS_comboBox.Name = "A_WS_comboBox";
             this.A_WS_comboBox.Size = new System.Drawing.Size(40, 21);
@@ -134,7 +132,7 @@
             "8",
             "9",
             "10"});
-            this.T_WS_comboBox.Location = new System.Drawing.Point(258, 9);
+            this.T_WS_comboBox.Location = new System.Drawing.Point(272, 21);
             this.T_WS_comboBox.MaxDropDownItems = 11;
             this.T_WS_comboBox.Name = "T_WS_comboBox";
             this.T_WS_comboBox.Size = new System.Drawing.Size(40, 21);
@@ -367,24 +365,16 @@
             this.MasterCrafted_checkBox.Text = "Master-Crafted";
             this.MasterCrafted_checkBox.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.AttackerWS);
-            this.panel1.Controls.Add(this.TargetWS);
-            this.panel1.Controls.Add(this.A_WS_comboBox);
-            this.panel1.Controls.Add(this.T_WS_comboBox);
-            this.panel1.Location = new System.Drawing.Point(15, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(303, 34);
-            this.panel1.TabIndex = 26;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 362);
+            this.Controls.Add(this.AttackerWS);
+            this.Controls.Add(this.TargetWS);
             this.Controls.Add(this.MasterCrafted_checkBox);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.A_WS_comboBox);
+            this.Controls.Add(this.T_WS_comboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Hatred_checkBox);
             this.Controls.Add(this.NumberofHits_textBox);
@@ -406,8 +396,6 @@
             this.Controls.Add(this.Strength);
             this.Name = "Form1";
             this.Text = "WH40K";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,7 +427,6 @@
         private System.Windows.Forms.CheckBox Hatred_checkBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox MasterCrafted_checkBox;
-        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -50,6 +50,9 @@ namespace WoundChanceCalcDesktop
             double ToHitChance;
             double ToHitsPass;
             double NumberofHits;
+            double ToHitsPassReroll;
+
+            // Close Combat to Hit rolls
             int A_WS = Int32.Parse(A_WS_comboBox.Text);
             int T_ws = Int32.Parse(T_WS_comboBox.Text);
             if (A_WS >= 5) {
@@ -60,20 +63,36 @@ namespace WoundChanceCalcDesktop
                 DataTable ToHitTableRoll = GetTable();
                 ToHitRoll = ToHitTableRoll.Rows[T_ws].Field<int>(A_WS);
             }
+
+            // Range weapons to Hit rolls
+
+            // calculating hit chance and number of passed hits.
             NumberofHits = double.Parse(NumberofHits_textBox.Text);
             ToHitChance = (7-ToHitRoll)/6;
             ToHitsPass = ToHitChance * NumberofHits;
-            if (MasterCrafted_checkBox.Checked)
+            ToHitsPassReroll = ToHitsPass + ((NumberofHits - ToHitsPass) * ToHitChance);
+            // Special to-hit rules
+            if (Hatred_checkBox.Checked)
             {
-                ToHitsPass = ToHitsPass + ToHitChance;
+                ToHitsPass = ToHitsPassReroll;
             }
-            if (Preferedenemy_checkBox.Checked)
+            else
             {
-                double NumberofOnes = NumberofHits / 6;
-                ToHitsPass = ToHitsPass + (NumberofOnes * ToHitChance);
+                if (MasterCrafted_checkBox.Checked)
+                {
+                    ToHitsPass = ToHitsPass + ToHitChance;
+                }
+                if (Preferedenemy_checkBox.Checked)
+                {
+                    ToHitsPass = ToHitsPass + ((NumberofHits / 6) * ToHitChance);
+                }
+                if (ToHitsPass > ToHitsPassReroll) { ToHitsPass = ToHitsPassReroll; }
             }
+            
 
             Result_textBox.Text = " Passed Hits:" + ToHitsPass.ToString();
+            Result_textBox.AppendText(Environment.NewLine);
+            Result_textBox.AppendText("asfasfa");
 
 
         }
