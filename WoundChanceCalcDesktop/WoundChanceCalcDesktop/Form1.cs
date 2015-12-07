@@ -76,11 +76,15 @@ namespace WoundChanceCalcDesktop
             if (ValidateInput())
             {
                 // To Hit calculation
-                double ToHitRoll = 1;
+                double ToHitRoll = 7;
                 double ToHitChance;
                 double ToHitsPass;
                 double NumberofHits;
                 double ToHitsPassReroll;
+                double WoundsPassed;
+                double WoundsPassedReroll;
+                double ToWoundRoll = 7;
+                double ToWoundChance;
 
                 // Close Combat to Hit rolls
                 if (CC_radioButton.Checked)
@@ -130,9 +134,36 @@ namespace WoundChanceCalcDesktop
                 }
 
 
+            // Calculate Passed Wounds
+                int SWDiff = Int32.Parse(Strength_comboBox.Text) - Int32.Parse(Toughness_comboBox.Text);
+
+                // To Wound Roll
+                if (SWDiff == 0) { ToWoundRoll = 4; }
+                if (SWDiff == -1) {ToWoundRoll = 5; }
+                if (SWDiff == -2) { ToWoundRoll = 6; }
+                if (SWDiff == -3) { ToWoundRoll = 6; }
+                if (SWDiff < -3) { ToWoundRoll = 7; }
+                if (SWDiff == 1) { ToWoundRoll = 3; }
+                if (SWDiff >= 2) { ToWoundRoll = 2; }
+
+                // To wound chance
+                ToWoundChance = (7 - ToWoundRoll) / 6;
+                WoundsPassed = ToHitsPass * ToWoundChance;
+                WoundsPassedReroll = WoundsPassed + ((ToHitsPass - WoundsPassed) * ToWoundChance);
+                if (Shred_checkBox.Checked)
+                { WoundsPassed = WoundsPassedReroll; }
+                else
+                {
+                    if (Preferedenemy_checkBox.Checked)
+                    {
+                        WoundsPassed = WoundsPassed + ((ToHitsPass / 6) * ToWoundChance);
+                    }
+                }
+              
+
                 Result_textBox.Text = " Passed Hits:" + ToHitsPass.ToString();
                 Result_textBox.AppendText(Environment.NewLine);
-                Result_textBox.AppendText("asfasfa");
+                Result_textBox.AppendText(" Passed Wounds:" + WoundsPassed.ToString());
 
             }
             else { MessageBox.Show("Incorrect Input"); }
@@ -146,6 +177,7 @@ namespace WoundChanceCalcDesktop
 
         private void CC_click(object sender, EventArgs e)
         {
+
         }
     }
 }
