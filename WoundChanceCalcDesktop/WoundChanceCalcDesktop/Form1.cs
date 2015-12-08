@@ -54,19 +54,23 @@ namespace WoundChanceCalcDesktop
             if (!(int.TryParse(NumberofAttacks_textBox.Text, out x))) { Valid = false; }
             if (!(int.TryParse(AP_comboBox.Text, out x))) 
             {
-                if (!(AP_comboBox.Text == "-")) { Valid = false; } ;
+                if (AP_comboBox.Text != "-") { Valid = false; } ;
             }
             if (!(int.TryParse((ArmourSave_comboBox.Text.Substring(0,1)), out x))) 
             {
-                if (!(ArmourSave_comboBox.Text == "-")) { Valid = false; } ;
+                if (ArmourSave_comboBox.Text != "-") { Valid = false; } ;
             }
             if (!(int.TryParse(InvSave_comboBox.Text.Substring(0, 1), out x))) 
             {
-                if (!(InvSave_comboBox.Text == "-")) { Valid = false; } ;
+                if (InvSave_comboBox.Text != "-") { Valid = false; } ;
             }
             if (!(int.TryParse(FNP_comboBox.Text.Substring(0, 1), out x))) 
             {
-                if (!(FNP_comboBox.Text == "-")) { Valid = false; };
+                if (FNP_comboBox.Text != "-") { Valid = false; };
+            }
+            if (!(int.TryParse(Poisoned_comboBox.Text.Substring(0, 1), out x)))
+            {
+                if (Poisoned_comboBox.Text != "-") { Valid = false; };
             }
             return Valid;
         }
@@ -81,10 +85,6 @@ namespace WoundChanceCalcDesktop
                 double ToHitsPass;
                 double NumberofHits;
                 double ToHitsPassReroll;
-                double WoundsPassed;
-                double WoundsPassedReroll;
-                double ToWoundRoll = 7;
-                double ToWoundChance;
 
                 // Close Combat to Hit rolls
                 if (CC_radioButton.Checked)
@@ -134,22 +134,36 @@ namespace WoundChanceCalcDesktop
                 }
 
 
-            // Calculate Passed Wounds
-                int SWDiff = Int32.Parse(Strength_comboBox.Text) - Int32.Parse(Toughness_comboBox.Text);
+                // Calculate Passed Wounds
+                double WoundsPassed;
+                double WoundsPassedReroll;
+                double ToWoundRoll = 7;
+                double ToWoundChance;
+                int Svalue = Int32.Parse(Strength_comboBox.Text);
+                int Tvalue = Int32.Parse(Toughness_comboBox.Text);
+
+                int STDiff = Svalue - Tvalue;
 
                 // To Wound Roll
-                if (SWDiff == 0) { ToWoundRoll = 4; }
-                if (SWDiff == -1) {ToWoundRoll = 5; }
-                if (SWDiff == -2) { ToWoundRoll = 6; }
-                if (SWDiff == -3) { ToWoundRoll = 6; }
-                if (SWDiff < -3) { ToWoundRoll = 7; }
-                if (SWDiff == 1) { ToWoundRoll = 3; }
-                if (SWDiff >= 2) { ToWoundRoll = 2; }
+                if (STDiff == 0) { ToWoundRoll = 4; }
+                if (STDiff == -1) {ToWoundRoll = 5; }
+                if (STDiff == -2) { ToWoundRoll = 6; }
+                if (STDiff == -3) { ToWoundRoll = 6; }
+                if (STDiff < -3) { ToWoundRoll = 7; }
+                if (STDiff == 1) { ToWoundRoll = 3; }
+                if (STDiff >= 2) { ToWoundRoll = 2; }
+
+                if (Poisoned_comboBox.Text != "-") { }
+
+                if (Flashbane_checkBox.Checked) { ToWoundRoll = 2; }
+
 
                 // To wound chance
                 ToWoundChance = (7 - ToWoundRoll) / 6;
                 WoundsPassed = ToHitsPass * ToWoundChance;
                 WoundsPassedReroll = WoundsPassed + ((ToHitsPass - WoundsPassed) * ToWoundChance);
+
+                // Wound Special Rules
                 if (Shred_checkBox.Checked)
                 { WoundsPassed = WoundsPassedReroll; }
                 else
@@ -160,10 +174,39 @@ namespace WoundChanceCalcDesktop
                     }
                 }
               
+                // Saves
+                double APValue;
+                if (!(double.TryParse(AP_comboBox.Text.Substring(0, 1), out APValue))) { APValue = 7; }
+                double ASValue;
+                if (!(double.TryParse(ArmourSave_comboBox.Text.Substring(0, 1), out ASValue))) { ASValue = 7; }
+                double InvValue;
+                if (!(double.TryParse(InvSave_comboBox.Text.Substring(0, 1), out InvValue))) { InvValue = 7; }
 
-                Result_textBox.Text = " Passed Hits:" + ToHitsPass.ToString();
+                double UnsavedWounds = 0;
+                if (APValue <= ASValue) 
+                {
+                    UnsavedWounds = WoundsPassed - (((7 - InvValue) / 6) * WoundsPassed);
+                }
+                else
+                {
+                    UnsavedWounds = WoundsPassed - (((7 - ASValue) / 6) * WoundsPassed);
+                }
+
+                // FNP rolls
+                double FinalWounds = UnsavedWounds;
+                double FNPvalue;
+                if (!(double.TryParse(FNP_comboBox.Text.Substring(0, 1), out FNPvalue))) { FNPvalue = 7; }
+                if ((Tvalue * 2) > Svalue) { FinalWounds = UnsavedWounds - (((7 - FNPvalue) / 6) * UnsavedWounds);  }
+
+
+                Result_textBox.Text = "Passed Hits: " + ToHitsPass.ToString();
                 Result_textBox.AppendText(Environment.NewLine);
-                Result_textBox.AppendText(" Passed Wounds:" + WoundsPassed.ToString());
+                Result_textBox.AppendText("Passed Wounds: " + WoundsPassed.ToString());
+                Result_textBox.AppendText(Environment.NewLine);
+                Result_textBox.AppendText("Unsaved Wounds: " + UnsavedWounds.ToString());
+                Result_textBox.AppendText(Environment.NewLine);
+                Result_textBox.AppendText("Final Wounds Count: " + FinalWounds.ToString());
+
 
             }
             else { MessageBox.Show("Incorrect Input"); }

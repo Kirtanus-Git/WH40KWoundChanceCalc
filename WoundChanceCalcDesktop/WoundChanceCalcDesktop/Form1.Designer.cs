@@ -56,6 +56,13 @@
             this.RW_radioButton = new System.Windows.Forms.RadioButton();
             this.BS_comboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Flashbane_checkBox = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Poisoned_comboBox = new System.Windows.Forms.ComboBox();
+            this.RP_checkBox = new System.Windows.Forms.CheckBox();
+            this.EnhacnedRP_checkBox = new System.Windows.Forms.CheckBox();
+            this.Sniper_checkBox = new System.Windows.Forms.CheckBox();
+            this.Rending_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // AttackerWS
@@ -320,7 +327,7 @@
             // 
             // Calc_button
             // 
-            this.Calc_button.Location = new System.Drawing.Point(119, 180);
+            this.Calc_button.Location = new System.Drawing.Point(15, 273);
             this.Calc_button.Name = "Calc_button";
             this.Calc_button.Size = new System.Drawing.Size(75, 23);
             this.Calc_button.TabIndex = 21;
@@ -331,7 +338,7 @@
             // Result_textBox
             // 
             this.Result_textBox.BackColor = System.Drawing.Color.White;
-            this.Result_textBox.Location = new System.Drawing.Point(44, 224);
+            this.Result_textBox.Location = new System.Drawing.Point(15, 312);
             this.Result_textBox.Multiline = true;
             this.Result_textBox.Name = "Result_textBox";
             this.Result_textBox.ReadOnly = true;
@@ -340,7 +347,7 @@
             // 
             // NumberofAttacks_textBox
             // 
-            this.NumberofAttacks_textBox.Location = new System.Drawing.Point(130, 113);
+            this.NumberofAttacks_textBox.Location = new System.Drawing.Point(130, 138);
             this.NumberofAttacks_textBox.Name = "NumberofAttacks_textBox";
             this.NumberofAttacks_textBox.Size = new System.Drawing.Size(40, 20);
             this.NumberofAttacks_textBox.TabIndex = 23;
@@ -360,8 +367,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 115);
+            this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 15);
             this.label3.TabIndex = 25;
@@ -381,7 +388,7 @@
             // 
             this.CC_radioButton.AutoSize = true;
             this.CC_radioButton.Checked = true;
-            this.CC_radioButton.Location = new System.Drawing.Point(119, 12);
+            this.CC_radioButton.Location = new System.Drawing.Point(190, 12);
             this.CC_radioButton.Name = "CC_radioButton";
             this.CC_radioButton.Size = new System.Drawing.Size(90, 17);
             this.CC_radioButton.TabIndex = 26;
@@ -393,7 +400,7 @@
             // RW_radioButton
             // 
             this.RW_radioButton.AutoSize = true;
-            this.RW_radioButton.Location = new System.Drawing.Point(216, 12);
+            this.RW_radioButton.Location = new System.Drawing.Point(286, 12);
             this.RW_radioButton.Name = "RW_radioButton";
             this.RW_radioButton.Size = new System.Drawing.Size(101, 17);
             this.RW_radioButton.TabIndex = 27;
@@ -415,7 +422,7 @@
             "8",
             "9",
             "10"});
-            this.BS_comboBox.Location = new System.Drawing.Point(130, 138);
+            this.BS_comboBox.Location = new System.Drawing.Point(130, 12);
             this.BS_comboBox.MaxDropDownItems = 11;
             this.BS_comboBox.Name = "BS_comboBox";
             this.BS_comboBox.Size = new System.Drawing.Size(40, 21);
@@ -427,17 +434,102 @@
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 140);
+            this.label4.Location = new System.Drawing.Point(12, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 15);
             this.label4.TabIndex = 29;
             this.label4.Text = "Attacker BS";
             // 
+            // Flashbane_checkBox
+            // 
+            this.Flashbane_checkBox.AutoSize = true;
+            this.Flashbane_checkBox.Location = new System.Drawing.Point(337, 132);
+            this.Flashbane_checkBox.Name = "Flashbane_checkBox";
+            this.Flashbane_checkBox.Size = new System.Drawing.Size(75, 17);
+            this.Flashbane_checkBox.TabIndex = 31;
+            this.Flashbane_checkBox.Text = "Flashbane";
+            this.Flashbane_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Poisoned";
+            // 
+            // Poisoned_comboBox
+            // 
+            this.Poisoned_comboBox.FormattingEnabled = true;
+            this.Poisoned_comboBox.Items.AddRange(new object[] {
+            "-",
+            "6+",
+            "5+",
+            "4+",
+            "3+",
+            "2+"});
+            this.Poisoned_comboBox.Location = new System.Drawing.Point(130, 113);
+            this.Poisoned_comboBox.MaxDropDownItems = 11;
+            this.Poisoned_comboBox.Name = "Poisoned_comboBox";
+            this.Poisoned_comboBox.Size = new System.Drawing.Size(40, 21);
+            this.Poisoned_comboBox.TabIndex = 33;
+            this.Poisoned_comboBox.Text = "-";
+            // 
+            // RP_checkBox
+            // 
+            this.RP_checkBox.AutoSize = true;
+            this.RP_checkBox.Location = new System.Drawing.Point(189, 166);
+            this.RP_checkBox.Name = "RP_checkBox";
+            this.RP_checkBox.Size = new System.Drawing.Size(68, 17);
+            this.RP_checkBox.TabIndex = 34;
+            this.RP_checkBox.Text = "FNP=RP";
+            this.RP_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // EnhacnedRP_checkBox
+            // 
+            this.EnhacnedRP_checkBox.AutoSize = true;
+            this.EnhacnedRP_checkBox.Location = new System.Drawing.Point(189, 189);
+            this.EnhacnedRP_checkBox.Name = "EnhacnedRP_checkBox";
+            this.EnhacnedRP_checkBox.Size = new System.Drawing.Size(93, 17);
+            this.EnhacnedRP_checkBox.TabIndex = 35;
+            this.EnhacnedRP_checkBox.Text = "Enhacned RP";
+            this.EnhacnedRP_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // Sniper_checkBox
+            // 
+            this.Sniper_checkBox.AutoSize = true;
+            this.Sniper_checkBox.Location = new System.Drawing.Point(337, 155);
+            this.Sniper_checkBox.Name = "Sniper_checkBox";
+            this.Sniper_checkBox.Size = new System.Drawing.Size(56, 17);
+            this.Sniper_checkBox.TabIndex = 36;
+            this.Sniper_checkBox.Text = "Sniper";
+            this.Sniper_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // Rending_checkBox
+            // 
+            this.Rending_checkBox.AutoSize = true;
+            this.Rending_checkBox.Location = new System.Drawing.Point(337, 178);
+            this.Rending_checkBox.Name = "Rending_checkBox";
+            this.Rending_checkBox.Size = new System.Drawing.Size(66, 17);
+            this.Rending_checkBox.TabIndex = 37;
+            this.Rending_checkBox.Text = "Rending";
+            this.Rending_checkBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 362);
+            this.ClientSize = new System.Drawing.Size(484, 433);
+            this.Controls.Add(this.Rending_checkBox);
+            this.Controls.Add(this.Sniper_checkBox);
+            this.Controls.Add(this.EnhacnedRP_checkBox);
+            this.Controls.Add(this.RP_checkBox);
+            this.Controls.Add(this.Poisoned_comboBox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Flashbane_checkBox);
             this.Controls.Add(this.BS_comboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.RW_radioButton);
@@ -503,6 +595,13 @@
         private System.Windows.Forms.RadioButton RW_radioButton;
         private System.Windows.Forms.ComboBox BS_comboBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox Flashbane_checkBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox Poisoned_comboBox;
+        private System.Windows.Forms.CheckBox RP_checkBox;
+        private System.Windows.Forms.CheckBox EnhacnedRP_checkBox;
+        private System.Windows.Forms.CheckBox Sniper_checkBox;
+        private System.Windows.Forms.CheckBox Rending_checkBox;
     }
 }
 
