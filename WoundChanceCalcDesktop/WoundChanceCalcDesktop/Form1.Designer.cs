@@ -460,6 +460,7 @@
             this.label5.Size = new System.Drawing.Size(63, 15);
             this.label5.TabIndex = 32;
             this.label5.Text = "Poisoned";
+            this.label5.Visible = false;
             // 
             // Poisoned_comboBox
             // 
@@ -477,6 +478,7 @@
             this.Poisoned_comboBox.Size = new System.Drawing.Size(40, 21);
             this.Poisoned_comboBox.TabIndex = 33;
             this.Poisoned_comboBox.Text = "-";
+            this.Poisoned_comboBox.Visible = false;
             // 
             // RP_checkBox
             // 
@@ -507,6 +509,7 @@
             this.Sniper_checkBox.TabIndex = 36;
             this.Sniper_checkBox.Text = "Sniper";
             this.Sniper_checkBox.UseVisualStyleBackColor = true;
+            this.Sniper_checkBox.Visible = false;
             // 
             // Rending_checkBox
             // 
@@ -517,6 +520,7 @@
             this.Rending_checkBox.TabIndex = 37;
             this.Rending_checkBox.Text = "Rending";
             this.Rending_checkBox.UseVisualStyleBackColor = true;
+            this.Rending_checkBox.Visible = false;
             // 
             // Form1
             // 

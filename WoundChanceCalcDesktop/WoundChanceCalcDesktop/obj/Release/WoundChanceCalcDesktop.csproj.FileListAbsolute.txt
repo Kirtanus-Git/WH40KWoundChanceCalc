@@ -1,0 +1,8 @@
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\bin\Release\WoundChanceCalcDesktop.exe.config
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\bin\Release\WoundChanceCalcDesktop.exe
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\bin\Release\WoundChanceCalcDesktop.pdb
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.Form1.resources
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.Properties.Resources.resources
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.csproj.GenerateResource.Cache
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.exe
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.pdb

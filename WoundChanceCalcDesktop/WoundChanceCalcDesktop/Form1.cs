@@ -81,10 +81,12 @@ namespace WoundChanceCalcDesktop
             {
                 // To Hit calculation
                 double ToHitRoll = 7;
+                double ToHitBSRoll = 7;
                 double ToHitChance;
                 double ToHitsPass;
                 double NumberofHits;
                 double ToHitsPassReroll;
+                int BSvalue = Int32.Parse(BS_comboBox.Text);
 
                 // Close Combat to Hit rolls
                 if (CC_radioButton.Checked)
@@ -106,7 +108,12 @@ namespace WoundChanceCalcDesktop
                 // Range weapons to Hit rolls
                 if (RW_radioButton.Checked)
                 {
-
+                    if (BSvalue < 6) { ToHitRoll = 7 - BSvalue; }
+                    else 
+                    { 
+                        ToHitRoll = 2;
+                        ToHitBSRoll = 11 - BSvalue;
+                    }
                 }
 
 
@@ -130,6 +137,11 @@ namespace WoundChanceCalcDesktop
                     {
                         ToHitsPass = ToHitsPass + ((NumberofHits / 6) * ToHitChance);
                     }
+                    else 
+                    {
+                        if (BSvalue >= 6) { ToHitsPass = ToHitsPass + ((NumberofHits / 6) * (7 - ToHitBSRoll) / 6); }
+                    }
+                    
                     if (ToHitsPass > ToHitsPassReroll) { ToHitsPass = ToHitsPassReroll; }
                 }
 
@@ -156,8 +168,7 @@ namespace WoundChanceCalcDesktop
                 if (Poisoned_comboBox.Text != "-") { }
 
                 if (Flashbane_checkBox.Checked) { ToWoundRoll = 2; }
-
-
+                
                 // To wound chance
                 ToWoundChance = (7 - ToWoundRoll) / 6;
                 WoundsPassed = ToHitsPass * ToWoundChance;
