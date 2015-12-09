@@ -189,16 +189,29 @@ namespace WoundChanceCalcDesktop
                 }
                 else
                 {
-                    UnsavedWounds = WoundsPassed - (((7 - ASValue) / 6) * WoundsPassed);
+                    if (ASValue <= InvValue) { UnsavedWounds = WoundsPassed - (((7 - ASValue) / 6) * WoundsPassed); }
+                    else { UnsavedWounds = WoundsPassed - (((7 - InvValue) / 6) * WoundsPassed); }
                 }
 
                 // FNP rolls
                 double FinalWounds = UnsavedWounds;
                 double FNPvalue;
                 if (!(double.TryParse(FNP_comboBox.Text.Substring(0, 1), out FNPvalue))) { FNPvalue = 7; }
-                if ((Tvalue * 2) > Svalue) { FinalWounds = UnsavedWounds - (((7 - FNPvalue) / 6) * UnsavedWounds);  }
 
-
+                if ((Tvalue * 2) > Svalue) 
+                {                    
+                    FinalWounds = UnsavedWounds - (((7 - FNPvalue) / 6) * UnsavedWounds);
+                    if (EnhancedRP_checkBox.Checked) { FinalWounds = FinalWounds - ((UnsavedWounds / 6) * ((7 - FNPvalue) / 6)); } 
+                }
+                else
+                {
+                    if (RP_checkBox.Checked)
+                    {
+                        FinalWounds = UnsavedWounds - (((6 - FNPvalue) / 6) * UnsavedWounds);
+                        if (EnhancedRP_checkBox.Checked) { FinalWounds = FinalWounds - ((UnsavedWounds / 6) * ((6 - FNPvalue) / 6)); }
+                    }
+                }
+                
                 Result_textBox.Text = "Passed Hits: " + ToHitsPass.ToString();
                 Result_textBox.AppendText(Environment.NewLine);
                 Result_textBox.AppendText("Passed Wounds: " + WoundsPassed.ToString());

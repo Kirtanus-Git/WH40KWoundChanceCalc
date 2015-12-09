@@ -60,7 +60,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Poisoned_comboBox = new System.Windows.Forms.ComboBox();
             this.RP_checkBox = new System.Windows.Forms.CheckBox();
-            this.EnhacnedRP_checkBox = new System.Windows.Forms.CheckBox();
+            this.EnhancedRP_checkBox = new System.Windows.Forms.CheckBox();
             this.Sniper_checkBox = new System.Windows.Forms.CheckBox();
             this.Rending_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
@@ -327,7 +327,7 @@
             // 
             // Calc_button
             // 
-            this.Calc_button.Location = new System.Drawing.Point(15, 273);
+            this.Calc_button.Location = new System.Drawing.Point(21, 212);
             this.Calc_button.Name = "Calc_button";
             this.Calc_button.Size = new System.Drawing.Size(75, 23);
             this.Calc_button.TabIndex = 21;
@@ -338,7 +338,7 @@
             // Result_textBox
             // 
             this.Result_textBox.BackColor = System.Drawing.Color.White;
-            this.Result_textBox.Location = new System.Drawing.Point(15, 312);
+            this.Result_textBox.Location = new System.Drawing.Point(15, 241);
             this.Result_textBox.Multiline = true;
             this.Result_textBox.Name = "Result_textBox";
             this.Result_textBox.ReadOnly = true;
@@ -488,15 +488,15 @@
             this.RP_checkBox.Text = "FNP=RP";
             this.RP_checkBox.UseVisualStyleBackColor = true;
             // 
-            // EnhacnedRP_checkBox
+            // EnhancedRP_checkBox
             // 
-            this.EnhacnedRP_checkBox.AutoSize = true;
-            this.EnhacnedRP_checkBox.Location = new System.Drawing.Point(189, 189);
-            this.EnhacnedRP_checkBox.Name = "EnhacnedRP_checkBox";
-            this.EnhacnedRP_checkBox.Size = new System.Drawing.Size(93, 17);
-            this.EnhacnedRP_checkBox.TabIndex = 35;
-            this.EnhacnedRP_checkBox.Text = "Enhacned RP";
-            this.EnhacnedRP_checkBox.UseVisualStyleBackColor = true;
+            this.EnhancedRP_checkBox.AutoSize = true;
+            this.EnhancedRP_checkBox.Location = new System.Drawing.Point(189, 189);
+            this.EnhancedRP_checkBox.Name = "EnhancedRP_checkBox";
+            this.EnhancedRP_checkBox.Size = new System.Drawing.Size(93, 17);
+            this.EnhancedRP_checkBox.TabIndex = 35;
+            this.EnhancedRP_checkBox.Text = "Enhacned RP";
+            this.EnhancedRP_checkBox.UseVisualStyleBackColor = true;
             // 
             // Sniper_checkBox
             // 
@@ -522,10 +522,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 433);
+            this.ClientSize = new System.Drawing.Size(484, 368);
             this.Controls.Add(this.Rending_checkBox);
             this.Controls.Add(this.Sniper_checkBox);
-            this.Controls.Add(this.EnhacnedRP_checkBox);
+            this.Controls.Add(this.EnhancedRP_checkBox);
             this.Controls.Add(this.RP_checkBox);
             this.Controls.Add(this.Poisoned_comboBox);
             this.Controls.Add(this.label5);
@@ -599,7 +599,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox Poisoned_comboBox;
         private System.Windows.Forms.CheckBox RP_checkBox;
-        private System.Windows.Forms.CheckBox EnhacnedRP_checkBox;
+        private System.Windows.Forms.CheckBox EnhancedRP_checkBox;
         private System.Windows.Forms.CheckBox Sniper_checkBox;
         private System.Windows.Forms.CheckBox Rending_checkBox;
     }
