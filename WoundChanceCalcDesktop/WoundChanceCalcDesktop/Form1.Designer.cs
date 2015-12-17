@@ -31,7 +31,7 @@
             this.AttackerWS = new System.Windows.Forms.Label();
             this.TargetWS = new System.Windows.Forms.Label();
             this.Strength = new System.Windows.Forms.Label();
-            this.Preferedenemy_checkBox = new System.Windows.Forms.CheckBox();
+            this.ReRoll1toHit_checkBox = new System.Windows.Forms.CheckBox();
             this.A_WS_comboBox = new System.Windows.Forms.ComboBox();
             this.T_WS_comboBox = new System.Windows.Forms.ComboBox();
             this.Toughness = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.FNP_comboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Shred_checkBox = new System.Windows.Forms.CheckBox();
+            this.ReRollToWound_checkBox = new System.Windows.Forms.CheckBox();
             this.Calc_button = new System.Windows.Forms.Button();
             this.Result_textBox = new System.Windows.Forms.TextBox();
             this.NumberofAttacks_textBox = new System.Windows.Forms.TextBox();
@@ -63,6 +63,10 @@
             this.EnhancedRP_checkBox = new System.Windows.Forms.CheckBox();
             this.Sniper_checkBox = new System.Windows.Forms.CheckBox();
             this.Rending_checkBox = new System.Windows.Forms.CheckBox();
+            this.ReRollWound1_checkBox = new System.Windows.Forms.CheckBox();
+            this.ReRollSave1_checkBox = new System.Windows.Forms.CheckBox();
+            this.ReRollAllSaves_checkBox = new System.Windows.Forms.CheckBox();
+            this.ReRollFNP_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // AttackerWS
@@ -98,15 +102,16 @@
             this.Strength.TabIndex = 4;
             this.Strength.Text = "Weapon Strength";
             // 
-            // Preferedenemy_checkBox
+            // ReRoll1toHit_checkBox
             // 
-            this.Preferedenemy_checkBox.AutoSize = true;
-            this.Preferedenemy_checkBox.Location = new System.Drawing.Point(337, 64);
-            this.Preferedenemy_checkBox.Name = "Preferedenemy_checkBox";
-            this.Preferedenemy_checkBox.Size = new System.Drawing.Size(100, 17);
-            this.Preferedenemy_checkBox.TabIndex = 6;
-            this.Preferedenemy_checkBox.Text = "Prefered enemy";
-            this.Preferedenemy_checkBox.UseVisualStyleBackColor = true;
+            this.ReRoll1toHit_checkBox.AutoSize = true;
+            this.ReRoll1toHit_checkBox.Location = new System.Drawing.Point(337, 64);
+            this.ReRoll1toHit_checkBox.Name = "ReRoll1toHit_checkBox";
+            this.ReRoll1toHit_checkBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ReRoll1toHit_checkBox.Size = new System.Drawing.Size(100, 17);
+            this.ReRoll1toHit_checkBox.TabIndex = 6;
+            this.ReRoll1toHit_checkBox.Text = "To-Hit: Re-roll 1";
+            this.ReRoll1toHit_checkBox.UseVisualStyleBackColor = true;
             // 
             // A_WS_comboBox
             // 
@@ -315,15 +320,15 @@
             this.label2.TabIndex = 18;
             this.label2.Text = "FNP";
             // 
-            // Shred_checkBox
+            // ReRollToWound_checkBox
             // 
-            this.Shred_checkBox.AutoSize = true;
-            this.Shred_checkBox.Location = new System.Drawing.Point(337, 109);
-            this.Shred_checkBox.Name = "Shred_checkBox";
-            this.Shred_checkBox.Size = new System.Drawing.Size(54, 17);
-            this.Shred_checkBox.TabIndex = 20;
-            this.Shred_checkBox.Text = "Shred";
-            this.Shred_checkBox.UseVisualStyleBackColor = true;
+            this.ReRollToWound_checkBox.AutoSize = true;
+            this.ReRollToWound_checkBox.Location = new System.Drawing.Point(337, 134);
+            this.ReRollToWound_checkBox.Name = "ReRollToWound_checkBox";
+            this.ReRollToWound_checkBox.Size = new System.Drawing.Size(110, 17);
+            this.ReRollToWound_checkBox.TabIndex = 20;
+            this.ReRollToWound_checkBox.Text = "Re-roll To-Wound";
+            this.ReRollToWound_checkBox.UseVisualStyleBackColor = true;
             // 
             // Calc_button
             // 
@@ -358,9 +363,9 @@
             this.RerollFailedtoHit_checkBox.AutoSize = true;
             this.RerollFailedtoHit_checkBox.Location = new System.Drawing.Point(337, 87);
             this.RerollFailedtoHit_checkBox.Name = "RerollFailedtoHit_checkBox";
-            this.RerollFailedtoHit_checkBox.Size = new System.Drawing.Size(117, 17);
+            this.RerollFailedtoHit_checkBox.Size = new System.Drawing.Size(88, 17);
             this.RerollFailedtoHit_checkBox.TabIndex = 24;
-            this.RerollFailedtoHit_checkBox.Text = "Hatred/Twin-linked";
+            this.RerollFailedtoHit_checkBox.Text = "Re-roll To-Hit";
             this.RerollFailedtoHit_checkBox.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -443,7 +448,7 @@
             // Flashbane_checkBox
             // 
             this.Flashbane_checkBox.AutoSize = true;
-            this.Flashbane_checkBox.Location = new System.Drawing.Point(337, 132);
+            this.Flashbane_checkBox.Location = new System.Drawing.Point(337, 287);
             this.Flashbane_checkBox.Name = "Flashbane_checkBox";
             this.Flashbane_checkBox.Size = new System.Drawing.Size(75, 17);
             this.Flashbane_checkBox.TabIndex = 31;
@@ -503,7 +508,7 @@
             // Sniper_checkBox
             // 
             this.Sniper_checkBox.AutoSize = true;
-            this.Sniper_checkBox.Location = new System.Drawing.Point(337, 155);
+            this.Sniper_checkBox.Location = new System.Drawing.Point(337, 310);
             this.Sniper_checkBox.Name = "Sniper_checkBox";
             this.Sniper_checkBox.Size = new System.Drawing.Size(56, 17);
             this.Sniper_checkBox.TabIndex = 36;
@@ -514,7 +519,7 @@
             // Rending_checkBox
             // 
             this.Rending_checkBox.AutoSize = true;
-            this.Rending_checkBox.Location = new System.Drawing.Point(337, 178);
+            this.Rending_checkBox.Location = new System.Drawing.Point(337, 333);
             this.Rending_checkBox.Name = "Rending_checkBox";
             this.Rending_checkBox.Size = new System.Drawing.Size(66, 17);
             this.Rending_checkBox.TabIndex = 37;
@@ -522,11 +527,55 @@
             this.Rending_checkBox.UseVisualStyleBackColor = true;
             this.Rending_checkBox.Visible = false;
             // 
+            // ReRollWound1_checkBox
+            // 
+            this.ReRollWound1_checkBox.AutoSize = true;
+            this.ReRollWound1_checkBox.Location = new System.Drawing.Point(337, 109);
+            this.ReRollWound1_checkBox.Name = "ReRollWound1_checkBox";
+            this.ReRollWound1_checkBox.Size = new System.Drawing.Size(122, 17);
+            this.ReRollWound1_checkBox.TabIndex = 38;
+            this.ReRollWound1_checkBox.Text = "To-Wound: Re-roll 1";
+            this.ReRollWound1_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // ReRollSave1_checkBox
+            // 
+            this.ReRollSave1_checkBox.AutoSize = true;
+            this.ReRollSave1_checkBox.Location = new System.Drawing.Point(337, 157);
+            this.ReRollSave1_checkBox.Name = "ReRollSave1_checkBox";
+            this.ReRollSave1_checkBox.Size = new System.Drawing.Size(93, 17);
+            this.ReRollSave1_checkBox.TabIndex = 39;
+            this.ReRollSave1_checkBox.Text = "Re-roll Save 1";
+            this.ReRollSave1_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // ReRollAllSaves_checkBox
+            // 
+            this.ReRollAllSaves_checkBox.AutoSize = true;
+            this.ReRollAllSaves_checkBox.Location = new System.Drawing.Point(337, 180);
+            this.ReRollAllSaves_checkBox.Name = "ReRollAllSaves_checkBox";
+            this.ReRollAllSaves_checkBox.Size = new System.Drawing.Size(102, 17);
+            this.ReRollAllSaves_checkBox.TabIndex = 40;
+            this.ReRollAllSaves_checkBox.Text = "Re-roll all Saves";
+            this.ReRollAllSaves_checkBox.UseVisualStyleBackColor = true;
+            // 
+            // ReRollFNP_checkBox
+            // 
+            this.ReRollFNP_checkBox.AutoSize = true;
+            this.ReRollFNP_checkBox.Location = new System.Drawing.Point(337, 203);
+            this.ReRollFNP_checkBox.Name = "ReRollFNP_checkBox";
+            this.ReRollFNP_checkBox.Size = new System.Drawing.Size(80, 17);
+            this.ReRollFNP_checkBox.TabIndex = 41;
+            this.ReRollFNP_checkBox.Text = "Re-roll FNP";
+            this.ReRollFNP_checkBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 368);
+            this.Controls.Add(this.ReRollFNP_checkBox);
+            this.Controls.Add(this.ReRollAllSaves_checkBox);
+            this.Controls.Add(this.ReRollSave1_checkBox);
+            this.Controls.Add(this.ReRollWound1_checkBox);
             this.Controls.Add(this.Rending_checkBox);
             this.Controls.Add(this.Sniper_checkBox);
             this.Controls.Add(this.EnhancedRP_checkBox);
@@ -548,7 +597,7 @@
             this.Controls.Add(this.NumberofAttacks_textBox);
             this.Controls.Add(this.Result_textBox);
             this.Controls.Add(this.Calc_button);
-            this.Controls.Add(this.Shred_checkBox);
+            this.Controls.Add(this.ReRollToWound_checkBox);
             this.Controls.Add(this.FNP_comboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.InvSave_comboBox);
@@ -560,7 +609,7 @@
             this.Controls.Add(this.Toughness_comboBox);
             this.Controls.Add(this.Strength_comboBox);
             this.Controls.Add(this.Toughness);
-            this.Controls.Add(this.Preferedenemy_checkBox);
+            this.Controls.Add(this.ReRoll1toHit_checkBox);
             this.Controls.Add(this.Strength);
             this.Name = "Form1";
             this.Text = "WH40K";
@@ -574,7 +623,7 @@
         private System.Windows.Forms.Label AttackerWS;
         private System.Windows.Forms.Label TargetWS;
         private System.Windows.Forms.Label Strength;
-        private System.Windows.Forms.CheckBox Preferedenemy_checkBox;
+        private System.Windows.Forms.CheckBox ReRoll1toHit_checkBox;
         private System.Windows.Forms.ComboBox A_WS_comboBox;
         private System.Windows.Forms.ComboBox T_WS_comboBox;
         private System.Windows.Forms.Label Toughness;
@@ -588,7 +637,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox FNP_comboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox Shred_checkBox;
+        private System.Windows.Forms.CheckBox ReRollToWound_checkBox;
         private System.Windows.Forms.Button Calc_button;
         private System.Windows.Forms.TextBox Result_textBox;
         private System.Windows.Forms.TextBox NumberofAttacks_textBox;
@@ -606,6 +655,10 @@
         private System.Windows.Forms.CheckBox EnhancedRP_checkBox;
         private System.Windows.Forms.CheckBox Sniper_checkBox;
         private System.Windows.Forms.CheckBox Rending_checkBox;
+        private System.Windows.Forms.CheckBox ReRollWound1_checkBox;
+        private System.Windows.Forms.CheckBox ReRollSave1_checkBox;
+        private System.Windows.Forms.CheckBox ReRollAllSaves_checkBox;
+        private System.Windows.Forms.CheckBox ReRollFNP_checkBox;
     }
 }
 

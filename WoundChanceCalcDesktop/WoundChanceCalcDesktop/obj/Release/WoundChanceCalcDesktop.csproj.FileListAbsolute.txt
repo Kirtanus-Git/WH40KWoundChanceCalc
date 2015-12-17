@@ -6,3 +6,4 @@ F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Re
 F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.csproj.GenerateResource.Cache
 F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.exe
 F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.pdb
+F:\git\WH40KWoundChanceCalc\WoundChanceCalcDesktop\WoundChanceCalcDesktop\obj\Release\WoundChanceCalcDesktop.csprojResolveAssemblyReference.cache

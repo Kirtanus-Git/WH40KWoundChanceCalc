@@ -82,10 +82,6 @@ namespace WoundChanceCalcDesktop
                 // To Hit calculation
                 double ToHitRoll = 7;
                 double ToHitBSRoll = 7;
-                double ToHitChance;
-                double ToHitsPass;
-                double NumberofHits;
-                double ToHitsPassReroll;
                 int BSvalue = Int32.Parse(BS_comboBox.Text);
 
                 // Close Combat to Hit rolls
@@ -112,14 +108,20 @@ namespace WoundChanceCalcDesktop
                     else 
                     { 
                         ToHitRoll = 2;
-                        ToHitBSRoll = 11 - BSvalue;
+                        ToHitBSRoll = 12 - BSvalue;
                     }
                 }
 
 
+                double ToHitChance;
+                double ToHitBSChance;
+                double ToHitsPass;
+                double NumberofHits;
+                double ToHitsPassReroll;
                 // calculating hit chance and number of passed hits.
                 NumberofHits = double.Parse(NumberofAttacks_textBox.Text);
                 ToHitChance = (7 - ToHitRoll) / 6;
+                ToHitBSChance = (7 - ToHitBSRoll) / 6;
                 ToHitsPass = ToHitChance * NumberofHits;
                 ToHitsPassReroll = ToHitsPass + ((NumberofHits - ToHitsPass) * ToHitChance);
                 // Special to-hit rules
@@ -133,13 +135,13 @@ namespace WoundChanceCalcDesktop
                     {
                         ToHitsPass = ToHitsPass + ToHitChance;
                     }
-                    if (Preferedenemy_checkBox.Checked)
+                    if (ReRoll1toHit_checkBox.Checked)
                     {
                         ToHitsPass = ToHitsPass + ((NumberofHits / 6) * ToHitChance);
                     }
                     else 
                     {
-                        if (BSvalue >= 6) { ToHitsPass = ToHitsPass + ((NumberofHits / 6) * (7 - ToHitBSRoll) / 6); }
+                        if (BSvalue >= 6) { ToHitsPass = ToHitsPass + ((NumberofHits / 6) * ToHitBSChance); }
                     }
                     
                     if (ToHitsPass > ToHitsPassReroll) { ToHitsPass = ToHitsPassReroll; }
@@ -175,17 +177,19 @@ namespace WoundChanceCalcDesktop
                 WoundsPassedReroll = WoundsPassed + ((ToHitsPass - WoundsPassed) * ToWoundChance);
 
                 // Wound Special Rules
-                if (Shred_checkBox.Checked)
+                if (ReRollToWound_checkBox.Checked)
                 { WoundsPassed = WoundsPassedReroll; }
                 else
                 {
-                    if (Preferedenemy_checkBox.Checked)
+                    if (ReRollWound1_checkBox.Checked)
                     {
                         WoundsPassed = WoundsPassed + ((ToHitsPass / 6) * ToWoundChance);
                     }
                 }
               
                 // Saves
+                double SaveChance;
+                double SaveInvChance;
                 double APValue;
                 if (!(double.TryParse(AP_comboBox.Text.Substring(0, 1), out APValue))) { APValue = 7; }
                 double ASValue;
@@ -193,23 +197,44 @@ namespace WoundChanceCalcDesktop
                 double InvValue;
                 if (!(double.TryParse(InvSave_comboBox.Text.Substring(0, 1), out InvValue))) { InvValue = 7; }
 
+                SaveChance = (7 - ASValue) / 6;
+                SaveInvChance = (7 - InvValue) / 6;
+
                 double UnsavedWounds = 0;
                 if (APValue <= ASValue) 
                 {
-                    UnsavedWounds = WoundsPassed - (((7 - InvValue) / 6) * WoundsPassed);
+                    UnsavedWounds = WoundsPassed - (SaveInvChance * WoundsPassed);
+                    if (ReRollAllSaves_checkBox.Checked)
+                    {
+                        UnsavedWounds = UnsavedWounds - ((WoundsPassed - UnsavedWounds) * SaveInvChance);
+                    }
+                    else 
+                    { 
+                        if (ReRollSave1_checkBox.Checked) { UnsavedWounds = UnsavedWounds - (SaveInvChance * WoundsPassed / 6); } 
+                    }                    
                 }
                 else
                 {
-                    if (ASValue <= InvValue) { UnsavedWounds = WoundsPassed - (((7 - ASValue) / 6) * WoundsPassed); }
-                    else { UnsavedWounds = WoundsPassed - (((7 - InvValue) / 6) * WoundsPassed); }
+                    if (ASValue > InvValue) { SaveChance = SaveInvChance; }
+                    UnsavedWounds = WoundsPassed - (SaveChance * WoundsPassed);
+                    if (ReRollAllSaves_checkBox.Checked)
+                    {
+                        UnsavedWounds = UnsavedWounds - ((WoundsPassed - UnsavedWounds) * SaveChance);
+                    }
+                    else
+                    {
+                        if (ReRollSave1_checkBox.Checked) { UnsavedWounds = UnsavedWounds - (SaveChance * WoundsPassed / 6); }
+                    }  
                 }
+
+
 
                 // FNP rolls
                 double FinalWounds = UnsavedWounds;
                 double FNPvalue;
                 if (!(double.TryParse(FNP_comboBox.Text.Substring(0, 1), out FNPvalue))) { FNPvalue = 7; }
 
-                if ((Tvalue * 2) > Svalue) 
+                if ((Tvalue * 2) > Svalue)
                 {                    
                     FinalWounds = UnsavedWounds - (((7 - FNPvalue) / 6) * UnsavedWounds);
                     if (EnhancedRP_checkBox.Checked) { FinalWounds = FinalWounds - ((UnsavedWounds / 6) * ((7 - FNPvalue) / 6)); } 
