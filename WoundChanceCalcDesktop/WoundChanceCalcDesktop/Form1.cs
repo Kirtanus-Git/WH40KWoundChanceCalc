@@ -227,27 +227,25 @@ namespace WoundChanceCalcDesktop
                     }  
                 }
 
-
-
+                
                 // FNP rolls
                 double FinalWounds = UnsavedWounds;
                 double FNPvalue;
+                double FNPChance;
                 if (!(double.TryParse(FNP_comboBox.Text.Substring(0, 1), out FNPvalue))) { FNPvalue = 7; }
 
-                if ((Tvalue * 2) > Svalue)
-                {                    
-                    FinalWounds = UnsavedWounds - (((7 - FNPvalue) / 6) * UnsavedWounds);
-                    if (EnhancedRP_checkBox.Checked) { FinalWounds = FinalWounds - ((UnsavedWounds / 6) * ((7 - FNPvalue) / 6)); } 
+                if (Svalue >= (Tvalue * 2)) 
+                { 
+                    FNPvalue = 7;
+                    if (RP_checkBox.Checked) { FNPvalue = FNPvalue + 1; }
                 }
-                else
-                {
-                    if (RP_checkBox.Checked)
-                    {
-                        FinalWounds = UnsavedWounds - (((6 - FNPvalue) / 6) * UnsavedWounds);
-                        if (EnhancedRP_checkBox.Checked) { FinalWounds = FinalWounds - ((UnsavedWounds / 6) * ((6 - FNPvalue) / 6)); }
-                    }
-                }
-                
+
+                FNPChance = (7 - FNPvalue) / 6;
+                FinalWounds = UnsavedWounds - (FNPChance * UnsavedWounds);
+                if (ReRollFNP_checkBox.Checked) { FinalWounds = FinalWounds - ((UnsavedWounds - FinalWounds) * FNPChance); }
+                else { if (reRollFNP1_checkBox.Checked) { FinalWounds = FinalWounds - ((UnsavedWounds / 6) * FNPChance); } }  
+
+
                 Result_textBox.Text = "Passed Hits: " + ToHitsPass.ToString();
                 Result_textBox.AppendText(Environment.NewLine);
                 Result_textBox.AppendText("Passed Wounds: " + WoundsPassed.ToString());
